@@ -102,31 +102,35 @@
     <p><strong>Têm a honra de convidar a/o <span class="highlight" id="nome-convidado">___________</span> para a celebração do casamento de seus filhos Archel Albano & Assanate Lerito Álvaro.</strong></p>
     <p>A realizar-se no dia <strong>25 de Junho de 2026</strong></p>
 
-    <p><strong>Este convite é válido para <span class="highlight" id="num-pessoas">(2)</span> pessoas e não extensivo a crianças.</strong></p>
+    <!-- Essas informações só aparecerão depois de inserir o telefone -->
+    <div id="informacoes" style="display:none;">
+        <p><strong>Este convite é válido para <span class="highlight" id="num-pessoas">(2)</span> pessoas e não extensivo a crianças.</strong></p>
     
-    <p><strong>Nb:</strong> Pedimos para confirmar a sua presença. Contamos com a sua presença para abençoar este momento tão especial.</p>
+        <p><strong>Nb:</strong> Pedimos para confirmar a sua presença. Contamos com a sua presença para abençoar este momento tão especial.</p>
 
-    <button class="details" onclick="mostrarDetalhes()">Ver Detalhes</button>
-    
-    <!-- Informações sobre o evento (inicialmente ocultas) -->
-    <div class="event-info">
-        <strong>Informações sobre o evento:</strong>
-        <ul>
-            <li>Cerimônia civil às <strong>09:00</strong> no salão de casamento do registo civil de Nampula</li>
-            <li>Cerimônia religiosa às <strong>10:30</strong> na Igreja Adventista do Sétimo Dia Internacional de Nampula, em frente ao ShopRite</li>
-            <li>Copo de água após a cerimônia, no salão Klimanjaro, Terminal de Chapa Mahala Expansão, logo no início do pavê</li>
-        </ul>
+        <button class="details" onclick="mostrarDetalhes()">Ver Detalhes</button>
+        
+        <!-- Informações sobre o evento (inicialmente ocultas) -->
+        <div class="event-info">
+            <strong>Informações sobre o evento:</strong>
+            <ul>
+                <li>Cerimônia civil às <strong>09:00</strong> no salão de casamento do registo civil de Nampula</li>
+                <li>Cerimônia religiosa às <strong>10:30</strong> na Igreja Adventista do Sétimo Dia Internacional de Nampula, em frente ao ShopRite</li>
+                <li>Copo de água após a cerimônia, no salão Klimanjaro, Terminal de Chapa Mahala Expansão, logo no início do pavê</li>
+            </ul>
+        </div>
+
+        <p><em>"Entrega o teu caminho ao Senhor; confia nele e ele tudo fará." <strong>Salmos 37:5</strong></em></p>
+        
+        <a href="https://wa.me/258847099003?text=Confirmar%20presença%20para%20o%20casamento" class="button" id="whatsapp-button" target="_blank">Confirmar Presença</a>
     </div>
 
+    <!-- Campo de inserção de telefone -->
     <div class="input-container">
         <label for="telefone" style="font-size: 18px;">Digite seu número de telefone para acessar o convite:</label><br>
         <input type="text" id="telefone" class="input-field" placeholder="Ex: 258847099003">
         <button class="submit-button" onclick="verificarConvidado()">Acessar Convite</button>
     </div>
-
-    <p><em>"Entrega o teu caminho ao Senhor; confia nele e ele tudo fará." <strong>Salmos 37:5</strong></em></p>
-    
-    <a href="https://wa.me/258847099003?text=Confirmar%20presença%20para%20o%20casamento" class="button" id="whatsapp-button" target="_blank">Confirmar Presença</a>
 </div>
 
 <script>
@@ -148,24 +152,18 @@
             const convidado = convidados[telefone];
             document.getElementById("nome-convidado").innerText = convidado.nome;
             document.getElementById("num-pessoas").innerText = `(${convidado.numPessoas})`;
+            document.getElementById('informacoes').style.display = 'block'; // Exibe as informações do convite
         } else {
             document.getElementById("nome-convidado").innerText = "Convidado";
             document.getElementById("num-pessoas").innerText = "(1)";
+            document.getElementById('informacoes').style.display = 'block'; // Exibe as informações do convite
         }
     }
 
     // Função para mostrar detalhes do evento
     function mostrarDetalhes() {
-        document.querySelector('.event-info').style.display = 'block'; // Exibe as informações
+        document.querySelector('.event-info').style.display = 'block'; // Exibe as informações sobre o evento
     }
-
-    // Garante que o botão de WhatsApp esteja sempre visível
-    function manterBotaoWhatsApp() {
-        document.getElementById("whatsapp-button").style.display = "inline-block";
-    }
-
-    // Chama a função para garantir que o botão de WhatsApp fique visível
-    manterBotaoWhatsApp();
 </script>
 
 </body>
