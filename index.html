@@ -104,7 +104,7 @@
 
     <!-- Essas informações só aparecerão depois de inserir o telefone -->
     <div id="informacoes" style="display:none;">
-        <p><strong>Este convite é válido para <span class="highlight" id="num-pessoas">(2)</span> pessoas e não extensivo a crianças.</strong></p>
+        <p><strong>Este convite é válido para <span class="highlight" id="num-pessoas">_________</span> pessoas e não extensivo a crianças.</strong></p>
     
         <p><strong>Nb:</strong> Pedimos para confirmar a sua presença. Contamos com a sua presença para abençoar este momento tão especial.</p>
 
@@ -122,7 +122,7 @@
 
         <p><em>"Entrega o teu caminho ao Senhor; confia nele e ele tudo fará." <strong>Salmos 37:5</strong></em></p>
         
-        <a href="https://wa.me/258847099003?text=Confirmar%20presença%20para%20o%20casamento" class="button" id="whatsapp-button" target="_blank">Confirmar Presença</a>
+        <a href="https://wa.me/258847099003?text=Olá,%20gostaria%20de%20confirmar%20a%20minha%20presença%20no%20casamento%20da%20Archel%20e%20da%20Assanate" class="button" id="whatsapp-button" target="_blank">Confirmar Presença</a>
     </div>
 
     <!-- Campo de inserção de telefone -->
@@ -138,10 +138,10 @@
     const urlParams = new URLSearchParams(window.location.search);
     const whatsapp = urlParams.get('whatsapp');
 
-    // Função para buscar o nome e o número de pessoas a partir do número de WhatsApp
+    // Função para buscar o nome, o número de pessoas e a mensagem personalizada a partir do número de WhatsApp
     const convidados = {
         "258847099003": { nome: "ARCHEL E ASSANATE", numPessoas: 2 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 2 }
+        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 }
         // Adicione aqui os números e os dados de outros convidados
     };
 
@@ -151,12 +151,14 @@
         if (convidados[telefone]) {
             const convidado = convidados[telefone];
             document.getElementById("nome-convidado").innerText = convidado.nome;
-            document.getElementById("num-pessoas").innerText = `(${convidado.numPessoas})`;
+            document.getElementById("num-pessoas").innerText = `${convidado.numPessoas}`; // Atualiza número de pessoas
             document.getElementById('informacoes').style.display = 'block'; // Exibe as informações do convite
+            document.querySelector('.input-container').style.display = 'none'; // Esconde o campo de telefone e botão
         } else {
             document.getElementById("nome-convidado").innerText = "Convidado";
             document.getElementById("num-pessoas").innerText = "(1)";
             document.getElementById('informacoes').style.display = 'block'; // Exibe as informações do convite
+            document.querySelector('.input-container').style.display = 'none'; // Esconde o campo de telefone e botão
         }
     }
 
