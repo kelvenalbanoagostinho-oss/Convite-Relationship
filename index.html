@@ -66,6 +66,29 @@
             border-radius: 5px;
             font-size: 16px;
         }
+        .input-container {
+            margin-top: 20px;
+        }
+        .input-field {
+            padding: 10px;
+            font-size: 16px;
+            width: 200px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .submit-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .submit-button:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
@@ -94,10 +117,16 @@
             <li>Copo de água após a cerimônia, no salão Klimanjaro, Terminal de Chapa Mahala Expansão, logo no início do pavê</li>
         </ul>
     </div>
-    
+
+    <div class="input-container">
+        <label for="telefone" style="font-size: 18px;">Digite seu número de telefone para acessar o convite:</label><br>
+        <input type="text" id="telefone" class="input-field" placeholder="Ex: 258847099003">
+        <button class="submit-button" onclick="verificarConvidado()">Acessar Convite</button>
+    </div>
+
     <p><em>"Entrega o teu caminho ao Senhor; confia nele e ele tudo fará." <strong>Salmos 37:5</strong></em></p>
     
-    <a href="https://wa.me/258847099003?text=Confirmar%20presença%20para%20o%20casamento" class="button">Confirmar Presença</a>
+    <a href="https://wa.me/258847099003?text=Confirmar%20presença%20para%20o%20casamento" class="button" id="whatsapp-button" target="_blank">Confirmar Presença</a>
 </div>
 
 <script>
@@ -112,19 +141,31 @@
         // Adicione aqui os números e os dados de outros convidados
     };
 
-    if (whatsapp && convidados[whatsapp]) {
-        const convidado = convidados[whatsapp];
-        document.getElementById("nome-convidado").innerText = convidado.nome;
-        document.getElementById("num-pessoas").innerText = `(${convidado.numPessoas})`;
-    } else {
-        document.getElementById("nome-convidado").innerText = "Convidado";
-        document.getElementById("num-pessoas").innerText = "(1)";
+    function verificarConvidado() {
+        const telefone = document.getElementById('telefone').value;
+        
+        if (convidados[telefone]) {
+            const convidado = convidados[telefone];
+            document.getElementById("nome-convidado").innerText = convidado.nome;
+            document.getElementById("num-pessoas").innerText = `(${convidado.numPessoas})`;
+        } else {
+            document.getElementById("nome-convidado").innerText = "Convidado";
+            document.getElementById("num-pessoas").innerText = "(1)";
+        }
     }
 
     // Função para mostrar detalhes do evento
     function mostrarDetalhes() {
         document.querySelector('.event-info').style.display = 'block'; // Exibe as informações
     }
+
+    // Garante que o botão de WhatsApp esteja sempre visível
+    function manterBotaoWhatsApp() {
+        document.getElementById("whatsapp-button").style.display = "inline-block";
+    }
+
+    // Chama a função para garantir que o botão de WhatsApp fique visível
+    manterBotaoWhatsApp();
 </script>
 
 </body>
