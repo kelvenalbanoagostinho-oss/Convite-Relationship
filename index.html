@@ -7,10 +7,8 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-image: url('https://example.com/alianças.jpg'); /* Substitua com o link para a imagem de alianças entrelaçadas */
-            background-size: cover;
-            background-position: center;
-            color: white;
+            background-color: #f5f5dc; /* Cor de fundo bege */
+            color: black;
             text-align: center;
             padding: 20px;
         }
@@ -59,6 +57,15 @@
         .details:hover {
             background-color: #FF9900;
         }
+        .event-info {
+            display: none; /* Inicialmente escondido */
+            margin-top: 20px;
+            background-color: #e0d1a1; /* Fundo dourado claro */
+            color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
     </style>
 </head>
 <body>
@@ -67,7 +74,7 @@
     <h1>Pela graça de Deus</h1>
     <p><strong>Os Senhores</strong></p>
     <p>Albano Agostinho e Maria Imaculada Pedro Aundo</p>
-    <p>juntamente com</p>
+    <p>Juntamente com</p>
     <p>Lerito Álvaro/Maria Ivone Manuel e Nilza Torres</p>
     <p><strong>Têm a honra de convidar a/o <span class="highlight" id="nome-convidado">___________</span> para a celebração do casamento de seus filhos Archel Albano & Assanate Lerito Álvaro.</strong></p>
     <p>A realizar-se no dia <strong>25 de Junho de 2026</strong></p>
@@ -76,14 +83,17 @@
     
     <p><strong>Nb:</strong> Pedimos para confirmar a sua presença. Contamos com a sua presença para abençoar este momento tão especial.</p>
 
-    <button class="details" onclick="window.location.href='https://example.com/detalhes'">Ver Detalhes</button>
+    <button class="details" onclick="mostrarDetalhes()">Ver Detalhes</button>
     
-    <p><strong>Informações sobre o evento:</strong></p>
-    <ul>
-        <li>Cerimônia civil às <strong>09:00</strong> no salão de casamento do registo civil de Nampula</li>
-        <li>Cerimônia religiosa às <strong>10:30</strong> na Igreja Adventista do Sétimo Dia Internacional de Nampula, em frente ao ShopRite</li>
-        <li>Copo de água após a cerimônia, no salão Klimanjaro, Terminal de Chapa Mahala Expansão, logo no início do pavê</li>
-    </ul>
+    <!-- Informações sobre o evento (inicialmente ocultas) -->
+    <div class="event-info">
+        <strong>Informações sobre o evento:</strong>
+        <ul>
+            <li>Cerimônia civil às <strong>09:00</strong> no salão de casamento do registo civil de Nampula</li>
+            <li>Cerimônia religiosa às <strong>10:30</strong> na Igreja Adventista do Sétimo Dia Internacional de Nampula, em frente ao ShopRite</li>
+            <li>Copo de água após a cerimônia, no salão Klimanjaro, Terminal de Chapa Mahala Expansão, logo no início do pavê</li>
+        </ul>
+    </div>
     
     <p><em>"Entrega o teu caminho ao Senhor; confia nele e ele tudo fará." <strong>Salmos 37:5</strong></em></p>
     
@@ -97,8 +107,8 @@
 
     // Função para buscar o nome e o número de pessoas a partir do número de WhatsApp
     const convidados = {
-        "258871408400": { nome: "Assanate e Archel", numPessoas: 2 },
-        "258843913044": { nome: "Familia Ntunduhata", numPessoas: 2 }
+        "258847099003": { nome: "ARCHEL E ASSANATE", numPessoas: 2 },
+        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 2 }
         // Adicione aqui os números e os dados de outros convidados
     };
 
@@ -109,6 +119,11 @@
     } else {
         document.getElementById("nome-convidado").innerText = "Convidado";
         document.getElementById("num-pessoas").innerText = "(1)";
+    }
+
+    // Função para mostrar detalhes do evento
+    function mostrarDetalhes() {
+        document.querySelector('.event-info').style.display = 'block'; // Exibe as informações
     }
 </script>
 
