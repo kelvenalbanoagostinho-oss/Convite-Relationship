@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1080, initial-scale=1.0">
+    <title>Convite de Casamento - Assanate & Archel</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Noto Serif SC';
+            src: url('https://assets-persist.lovart.ai/agent-static-assets/NotoSerifCJKsc-Regular.otf');
+            font-weight: normal;
+        }
+        @font-face {
+            font-family: 'Noto Serif SC';
+            src: url('https://assets-persist.lovart.ai/agent-static-assets/NotoSerifCJKsc-Bold.otf');
+            font-weight: bold;
+        }
+        @font-face {
+            font-family: 'XiaoWei';
+            src: url('https://assets-persist.lovart.ai/agent-static-assets/ZCOOLXiaoWei-Regular.ttf');
+        }
+        @font-face {
+            font-family: 'MiSans';
+            src: url('https://assets-persist.lovart.ai/agent-static-assets/MiSans-Regular.ttf');
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 1080px;
+            font-family: 'Noto Serif SC', serif;
+            color: #ffffff;
+            margin: 0 auto;
+            background-color: #1a1a1a;
+            overflow-x: hidden;
+        }
+
+        /* Fixed Background Structure */
+        .bg-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 1080px; /* Constrain to container width */
+            height: 100vh;
+            object-fit: cover;
+            object-position: center;
+            z-index: -2;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 1080px;
+            height: 100vh;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0.9) 100%);
+            z-index: -1;
+        }
+
+        /* Scrollable Content */
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 80px 60px 120px 60px;
+            text-align: center;
+        }
+
+        /* Typography & Design Elements */
+        .header-subtitle {
+            font-family: 'MiSans', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            font-size: 24px;
+            color: #e0e0e0;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .save-the-date {
+            font-family: 'XiaoWei', serif;
+            font-size: 48px;
+            color: #D4AF37; /* Gold */
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        .couple-names {
+            font-family: 'XiaoWei', serif;
+            font-size: 110px;
+            line-height: 1.2;
+            color: #ffffff;
+            margin: 30px 0;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.6);
+            background: linear-gradient(to right, #fff 20%, #D4AF37 50%, #fff 80%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .wedding-date {
+            font-size: 42px;
+            letter-spacing: 4px;
+            margin-bottom: 60px;
+            border-top: 1px solid rgba(212, 175, 55, 0.5);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.5);
+            padding: 15px 40px;
+            display: inline-block;
+            color: #f0f0f0;
+        }
+
+        .invitation-text {
+            font-size: 28px;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            max-width: 800px;
+            color: #e0e0e0;
+            font-weight: 300;
+        }
+
+        .rsvp-deadline {
+            font-size: 22px;
+            color: #D4AF37;
+            margin-bottom: 60px;
+            font-style: italic;
+        }
+
+        /* Buttons */
+        .action-area {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            width: 100%;
+            max-width: 700px;
+        }
+
+        .btn-primary {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(212, 175, 55, 0.9);
+            color: #000;
+            text-decoration: none;
+            padding: 25px 40px;
+            border-radius: 50px;
+            font-size: 28px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            border: 2px solid transparent;
+            font-family: 'MiSans', sans-serif;
+        }
+
+        /* Checkbox Hack Implementation */
+        input[type="checkbox"]#show-details {
+            display: none;
+        }
+
+        .details-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            color: #D4AF37;
+            padding: 25px 40px;
+            border-radius: 50px;
+            font-size: 28px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            border: 2px solid #D4AF37;
+            transition: all 0.3s ease;
+            width: 100%;
+            box-sizing: border-box;
+            font-family: 'MiSans', sans-serif;
+        }
+
+        /* Details Section Animation */
+        .details-section {
+            display: none;
+            width: 100%;
+            margin-top: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            animation: fadeIn 0.5s ease;
+        }
+
+        #show-details:checked ~ .details-section {
+            display: block;
+        }
+
+        #show-details:checked + label .details-button {
+            background: rgba(212, 175, 55, 0.2);
+            color: #fff;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Program Cards */
+        .program-title {
+            font-family: 'XiaoWei', serif;
+            font-size: 42px;
+            color: #D4AF37;
+            margin-bottom: 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 20px;
+        }
+
+        .program-item {
+            display: flex;
+            align-items: flex-start;
+            text-align: left;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.15);
+        }
+
+        .program-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .program-icon {
+            font-size: 48px;
+            color: #D4AF37;
+            margin-right: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .program-info h3 {
+            font-size: 32px;
+            color: #fff;
+            margin-bottom: 8px;
+            font-family: 'XiaoWei', serif;
+        }
+
+        .program-info .time {
+            font-size: 24px;
+            color: #D4AF37;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .program-info p {
+            font-size: 22px;
+            color: #cccccc;
+            line-height: 1.4;
+        }
+
+        /* Footer */
+        .footer-deco {
+            margin-top: 80px;
+            font-size: 30px;
+            color: #D4AF37;
+            opacity: 0.8;
+        }
+
+        .separator {
+            width: 100px;
+            height: 2px;
+            background: #D4AF37;
+            margin: 0 auto 30px auto;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Fixed Background Image -->
+    <img src="https://a.lovart.ai/artifacts/user/r50fkXyIp0DqkiyA.jpeg" alt="Assanate & Archel" class="bg-image">
+    
+    <!-- Dark Overlay -->
+    <div class="overlay"></div>
+
+    <!-- Scrollable Content -->
+    <div class="content-wrapper">
+        
+        <div class="header-subtitle">Convite de Casamento</div>
+        
+        <div class="save-the-date">Save the Date</div>
+        
+        <h1 class="couple-names">Assanate<br>&<br>Archel</h1>
+        
+        <div class="wedding-date">25.06.2026</div>
+
+        <p class="invitation-text">
+            Com grande alegria convidamos você para celebrar connosco o nosso casamento. Sua presença tornará este momento ainda mais especial.
+        </p>
+
+        <p class="rsvp-deadline">
+            Pedimos a gentileza de confirmar a sua presença no prazo de até 3 dias após o recebimento deste convite.
+        </p>
+
+        <div class="separator"></div>
+
+        <div class="action-area">
+            <!-- WhatsApp Button -->
+            <a href="https://wa.me/258847099003?text=Olá, gostaria de confirmar minha presença no casamento de Assanate e Archel." class="btn-primary" target="_blank">
+                <i class="ri-whatsapp-line" style="margin-right: 15px;"></i> Confirmar Presença
+            </a>
+
+            <!-- Checkbox Hack for Details -->
+            <input type="checkbox" id="show-details">
+            <label for="show-details">
+                <span class="details-button">
+                   <i class="ri-calendar-event-line" style="margin-right: 15px;"></i> Ver Detalhes do Evento
+                </span>
+            </label>
+
+            <!-- Hidden Details Section -->
+            <div class="details-section">
+                <h2 class="program-title">Programa do Casamento</h2>
+
+                <div class="program-item">
+                    <div class="program-icon">
+                        <i class="ri-map-pin-user-fill"></i>
+                    </div>
+                    <div class="program-info">
+                        <h3>Cerimónia Civil</h3>
+                        <span class="time">Início às 09h00</span>
+                        <p>Salão de Casamentos de Nampula</p>
+                    </div>
+                </div>
+
+                <div class="program-item">
+                    <div class="program-icon">
+                        <i class="ri-church-fill"></i>
+                    </div>
+                    <div class="program-info">
+                        <h3>Cerimónia Religiosa</h3>
+                        <span class="time">Às 10h30</span>
+                        <p>IASD Internacional de Nampula</p>
+                    </div>
+                </div>
+
+                <div class="program-item">
+                    <div class="program-icon">
+                        <i class="ri-goblet-fill"></i>
+                    </div>
+                    <div class="program-info">
+                        <h3>Copo de Água / Recepção</h3>
+                        <span class="time">Às 14h00</span>
+                        <p>Sala Klimandjaro (Muhala-expansão, logo no início do pave)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-deco">
+            <i class="ri-heart-3-fill"></i>
+        </div>
+
+    </div>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"aa50fec79b214c0582a0bc0d66f75f48","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
