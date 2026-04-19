@@ -1,286 +1,335 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Convite de Casamento</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5dc; /* Cor de fundo bege */
-            color: black;
-            text-align: center;
-            padding: 20px;
-        }
-        .container {
-            background: rgba(0, 0, 0, 0.5);
-            padding: 30px;
-            border-radius: 10px;
-            width: 80%;
-            margin: 0 auto;
-        }
-        h1 {
-            font-size: 36px;
-            font-weight: bold;
-        }
-        p {
-            font-size: 18px;
-            line-height: 1.6;
-        }
-        .highlight {
-            color: gold;
-            font-weight: bold;
-        }
-        .button {
-            background-color: #25D366;
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            margin-top: 20px;
-            font-size: 18px;
-            cursor: pointer;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-        .button:hover {
-            background-color: #128C7E;
-        }
-        .details {
-            margin-top: 20px;
-            background-color: #FFDD00;
-            color: #333;
-            padding: 10px;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .details:hover {
-            background-color: #FF9900;
-        }
-        .event-info {
-            display: none; /* Inicialmente escondido */
-            margin-top: 20px;
-            background-color: #e0d1a1; /* Fundo dourado claro */
-            color: #333;
-            padding: 10px;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-        .input-container {
-            margin-top: 20px;
-        }
-        .input-field {
-            padding: 10px;
-            font-size: 16px;
-            width: 200px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-        .submit-button {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-        .submit-button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Convite de Casamento</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #f5f5dc, #e8e2c8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background: white;
+    max-width: 600px;
+    width: 90%;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+    animation: fadeIn 1s ease;
+}
+
+h1 {
+    color: #8B7500;
+    font-size: 28px;
+}
+
+p {
+    color: #333;
+    line-height: 1.6;
+}
+
+.highlight {
+    color: #bfa046;
+    font-weight: bold;
+}
+
+button, .button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.submit {
+    background: #4CAF50;
+    color: white;
+}
+
+.submit:hover {
+    background: #3e8e41;
+}
+
+.whatsapp {
+    background: #25D366;
+    color: white;
+}
+
+.whatsapp:hover {
+    background: #1da851;
+}
+
+.details {
+    background: #d4af37;
+    color: white;
+}
+
+.details:hover {
+    background: #b8962e;
+}
+
+input {
+    padding: 10px;
+    width: 80%;
+    margin-top: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.hidden {
+    display: none;
+}
+
+.event-info {
+    margin-top: 20px;
+    text-align: left;
+    background: #f8f5e6;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(10px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+</style>
 </head>
+
 <body>
 
 <div class="container">
-    <h1>Pela graça de Deus</h1>
-    <p><strong>Os Senhores</strong></p>
-    <p>Albano Agostinho e Maria Imaculada Pedro Aundo</p>
-    <p>Juntamente com</p>
-    <p>Lerito Álvaro/Maria Ivone Manuel e Nilza Torres</p>
-    <p><strong>Têm a honra de convidar a/o <span class="highlight" id="nome-convidado">___________</span> para a celebração do casamento de seus filhos Archel Albano & Assanate Lerito Álvaro.</strong></p>
-    <p>A realizar-se no dia <strong>25 de Junho de 2026</strong></p>
 
-    <!-- Essas informações só aparecerão depois de inserir o telefone -->
-    <div id="informacoes" style="display:none;">
-        <p><strong>Este convite é válido para <span class="highlight" id="num-pessoas">_________</span> pessoas e não extensivo a crianças.</strong></p>
-    
-        <p><strong>Nb:</strong> Pedimos para confirmar a sua presença. Contamos com a sua presença para abençoar este momento tão especial.</p>
+<h1>Pela graça de Deus</h1>
 
-        <button class="details" onclick="mostrarDetalhes()">Ver Detalhes</button>
-        
-        <!-- Informações sobre o evento (inicialmente ocultas) -->
-        <div class="event-info">
-            <strong>Informações sobre o evento:</strong>
-            <ul>
-                <li>Cerimônia civil às <strong>09:00</strong> no salão de casamento do registo civil de Nampula</li>
-                <li>Cerimônia religiosa às <strong>10:30</strong> na Igreja Adventista do Sétimo Dia Internacional de Nampula, em frente ao ShopRite</li>
-                <li>Copo de água após a cerimônia, no salão Klimanjaro, Terminal de Chapa Mahala Expansão, logo no início do pavê</li>
-            </ul>
-        </div>
+<p><strong>Os Senhores</strong></p>
+<p>Albano Agostinho e Maria Imaculada Pedro Aundo</p>
 
-        <p><em>"Entrega o teu caminho ao Senhor; confia nele e ele tudo fará." <strong>Salmos 37:5</strong></em></p>
-        
-        <a href="https://wa.me/258847099003?text=Olá,%20gostaria%20de%20confirmar%20a%20minha%20presença%20no%20casamento%20de%20Archel%20e%20da%20Assanate" class="button" id="whatsapp-button" target="_blank">Confirmar Presença</a>
-    </div>
+<p>Juntamente com</p>
+<p>Lerito Álvaro / Maria Ivone Manuel e Nilza Torres</p>
 
-    <!-- Campo de inserção de telefone -->
-    <div class="input-container">
-        <label for="telefone" style="font-size: 18px;">Digite seu número de telefone para acessar o convite:</label><br>
-        <input type="text" id="telefone" class="input-field" placeholder="Ex: 258847099003">
-        <button class="submit-button" onclick="verificarConvidado()">Acessar Convite</button>
-    </div>
+<p><strong>
+Têm a honra de convidar <span class="highlight" id="nome">________</span>
+para a celebração do casamento de seus filhos
+<br><br>
+Archel Albano & Assanate Lerito Álvaro
+</strong></p>
+
+<p>A realizar-se no dia <strong>25 de Junho de 2026</strong></p>
+
+<!-- INPUT -->
+<div id="login">
+<p>Digite seu número:</p>
+<input type="text" id="telefone" placeholder="Ex: 258847099003">
+<br>
+<button class="submit" onclick="verificar()">Acessar Convite</button>
+</div>
+
+<!-- CONTEUDO -->
+<div id="conteudo" class="hidden">
+
+<p><strong>
+Convite válido para <span class="highlight" id="pessoas">1</span> pessoa(s)
+</strong></p>
+
+<p><strong>NB:</strong> Confirme sua presença.</p>
+
+<button class="details" onclick="toggleDetalhes()">Ver Detalhes</button>
+
+<div id="detalhes" class="event-info hidden">
+<ul>
+<li>Civil: 09:00 - Registo Civil de Nampula</li>
+<li>Religioso: 10:30 - Igreja Adventista (em frente ao Shoprite)</li>
+<li>Recepção: Salão Klimanjaro</li>
+</ul>
+</div>
+
+<p><em>
+"Entrega o teu caminho ao Senhor; confia nele e ele tudo fará."
+<br>Salmos 37:5
+</em></p>
+
+<a id="whatsapp" class="button whatsapp" target="_blank">
+Confirmar Presença
+</a>
+
+</div>
+
 </div>
 
 <script>
-    // Função para pegar os parâmetros da URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const whatsapp = urlParams.get('whatsapp');
+// Lista de convidados
+const convidados = {
+    "258847099003": { nome: "ARCHEL E ASSANATE", pessoas: 2 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", pessoas: 1 },
+    "258876988248": { nome: "SILONA PEDRO AUNDO", Pessoas: 1 },
+    "258844949470": { nome: "FAMILIA NTUNDUHATA", Pessoas: 2 },
+    "258872655424": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
+    "258872655424": { nome: "LUCIA PAULO", pessoas: 1 }
+};
 
-    // Função para buscar o nome, o número de pessoas e a mensagem personalizada a partir do número de WhatsApp
-    const  // Lista de convidados (CORRIGIDO)
-    const convidados = {
-        "258876988248": { nome: "SILONA PEDRO AUNDO", numPessoas: 1 },
-        "258844949470": { nome: "FAMILIA NTUNDUHATA", numPessoas: 2 },
-        "258872655424": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258871408400": { nome: "FAMILIA NTUNDUHATA", numPessoas: 1 },
-        "258872655424": { nome: "LUCIA PAULO", numPessoas: 1 } // corrigido
-    };
+function verificar() {
+    const tel = document.getElementById("telefone").value.trim();
 
-    function verificarConvidado() {
-        const telefone = document.getElementById('telefone').value;
-        
-        if (convidados[telefone]) {
-            const convidado = convidados[telefone];
-            document.getElementById("nome-convidado").innerText = convidado.nome;
-            document.getElementById("num-pessoas").innerText = `${convidado.numPessoas}`; // Atualiza número de pessoas
-            document.getElementById('informacoes').style.display = 'block'; // Exibe as informações do convite
-            document.querySelector('.input-container').style.display = 'none'; // Esconde o campo de telefone e botão
-        } else {
-            document.getElementById("nome-convidado").innerText = "Convidado";
-            document.getElementById("num-pessoas").innerText = "(1)";
-            document.getElementById('informacoes').style.display = 'block'; // Exibe as informações do convite
-            document.querySelector('.input-container').style.display = 'none'; // Esconde o campo de telefone e botão
-        }
+    // validação Moçambique
+    if (!tel.startsWith("258") || tel.length !== 12) {
+        alert("Número inválido. Use formato: 2588XXXXXXXX");
+        return;
     }
 
-    // Função para mostrar detalhes do evento
-    function mostrarDetalhes() {
-        document.querySelector('.event-info').style.display = 'block'; // Exibe as informações sobre o evento
+    let nome = "Convidado";
+    let pessoas = 1;
+
+    if (convidados[tel]) {
+        nome = convidados[tel].nome;
+        pessoas = convidados[tel].pessoas;
     }
+
+    document.getElementById("nome").innerText = nome;
+    document.getElementById("pessoas").innerText = pessoas;
+
+    // WhatsApp link
+    const msg = `Olá, confirmo minha presença no casamento de Archel e Assanate`;
+    document.getElementById("whatsapp").href =
+        `https://wa.me/258847099003?text=${encodeURIComponent(msg)}`;
+
+    document.getElementById("login").classList.add("hidden");
+    document.getElementById("conteudo").classList.remove("hidden");
+}
+
+// Enter
+document.getElementById("telefone").addEventListener("keypress", function(e){
+    if(e.key === "Enter") verificar();
+});
+
+function toggleDetalhes(){
+    document.getElementById("detalhes").classList.toggle("hidden");
+}
 </script>
 
 </body>
