@@ -3,333 +3,1799 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Convite de Casamento</title>
 
 <style>
-body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #f5f5dc, #e8e2c8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+body{
+    margin:0;
+    padding:20px;
+    font-family:'Segoe UI',sans-serif;
+    background:linear-gradient(135deg,#f5f5dc,#e8e2c8);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    box-sizing:border-box;
 }
 
-.container {
-    background: white;
-    max-width: 600px;
-    width: 90%;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    text-align: center;
-    animation: fadeIn 1s ease;
+.container{
+    background:white;
+    max-width:600px;
+    width:100%;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+    text-align:center;
+    animation:fadeIn 1s ease;
 }
 
-h1 {
-    color: #8B7500;
-    font-size: 28px;
+h1{
+    color:#8B7500;
+    font-size:32px;
+    margin-bottom:10px;
 }
 
-p {
-    color: #333;
-    line-height: 1.6;
+p{
+    color:#333;
+    line-height:1.7;
+    font-size:16px;
 }
 
-.highlight {
-    color: #bfa046;
-    font-weight: bold;
+.highlight{
+    color:#bfa046;
+    font-weight:bold;
 }
 
-button, .button {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
+button,.button{
+    display:inline-block;
+    margin-top:15px;
+    padding:12px 25px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    text-decoration:none;
+    font-weight:bold;
+    transition:0.3s;
+    font-size:15px;
 }
 
-.submit {
-    background: #4CAF50;
-    color: white;
+.submit{
+    background:#4CAF50;
+    color:white;
 }
 
-.submit:hover {
-    background: #3e8e41;
+.submit:hover{
+    background:#3e8e41;
 }
 
-.whatsapp {
-    background: #25D366;
-    color: white;
+.whatsapp{
+    background:#25D366;
+    color:white;
 }
 
-.whatsapp:hover {
-    background: #1da851;
+.whatsapp:hover{
+    background:#1da851;
 }
 
-.details {
-    background: #d4af37;
-    color: white;
+.details{
+    background:#d4af37;
+    color:white;
 }
 
-.details:hover {
-    background: #b8962e;
+.details:hover{
+    background:#b8962e;
 }
 
-input {
-    padding: 10px;
-    width: 80%;
-    margin-top: 10px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
+input{
+    padding:12px;
+    width:80%;
+    margin-top:10px;
+    border-radius:8px;
+    border:1px solid #ccc;
+    font-size:15px;
+    outline:none;
 }
 
-.hidden {
-    display: none;
+.hidden{
+    display:none;
 }
 
-.event-info {
-    margin-top: 20px;
-    text-align: left;
-    background: #f8f5e6;
-    padding: 15px;
-    border-radius: 10px;
+.event-info{
+    margin-top:20px;
+    text-align:left;
+    background:#f8f5e6;
+    padding:15px;
+    border-radius:10px;
 }
 
-@keyframes fadeIn {
-    from {opacity: 0; transform: translateY(10px);}
-    to {opacity: 1; transform: translateY(0);}
+.event-info ul{
+    padding-left:20px;
+}
+
+.event-info li{
+    margin-bottom:10px;
+}
+
+.divider{
+    width:80px;
+    height:3px;
+    background:#d4af37;
+    margin:20px auto;
+    border-radius:10px;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@media(max-width:600px){
+
+    .container{
+        padding:20px;
+    }
+
+    h1{
+        font-size:26px;
+    }
+
+    p{
+        font-size:15px;
+    }
+
+    input{
+        width:100%;
+        box-sizing:border-box;
+    }
+
+    button,.button{
+        width:100%;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<div class="container" id="convite">
 
-<h1>Pela graça de Deus</h1>
+    <h1>Pela Graça de Deus</h1>
 
-<p><strong>Os Senhores</strong></p>
-<p>Albano Agostinho e Maria Imaculada Pedro Aundo</p>
+    <div class="divider"></div>
 
-<p>Juntamente com</p>
-<p>Lerito Álvaro / Maria Ivone Manuel e Nilza Torres</p>
+    <p><strong>Os Senhores</strong></p>
 
-<p><strong>
-Têm a honra de convidar <span class="highlight" id="nome">________</span>
-para a celebração do casamento de seus filhos
-<br><br>
-Archel Albano & Assanate Lerito Álvaro
-</strong></p>
+    <p>
+        Albano Agostinho e Maria Imaculada Pedro Aundo
+    </p>
 
-<p>A realizar-se no dia <strong>25 de Junho de 2026</strong></p>
+    <p>Juntamente com</p>
 
-<!-- INPUT -->
-<div id="login">
-<p>Digite seu número:</p>
-<input type="text" id="telefone" placeholder="Ex: 258847099003">
-<br>
-<button class="submit" onclick="verificar()">Acessar Convite</button>
+    <p>
+        Lerito Álvaro / Maria Ivone Manuel e Nilza Torres
+    </p>
+
+    <p>
+        <strong>
+            Têm a honra de convidar
+            <span class="highlight" id="nome">________</span>
+            para a celebração do casamento de seus filhos
+        </strong>
+    </p>
+
+    <h2 style="color:#b8962e;">
+        Archel Albano & Assanate Lerito Álvaro
+    </h2>
+
+    <p>
+        A realizar-se no dia
+        <strong>25 de Junho de 2026</strong>
+    </p>
+
+    <!-- LOGIN -->
+    <div id="login">
+
+        <p>Digite o seu número:</p>
+
+        <input
+            type="text"
+            id="telefone"
+            placeholder="Ex: 258847099003"
+        >
+
+        <br>
+
+        <button class="submit" onclick="verificar()">
+            Acessar Convite
+        </button>
+
+    </div>
+
+    <!-- CONTEÚDO -->
+    <div id="conteudo" class="hidden">
+
+        <p>
+            <strong>
+                Convite válido para
+                <span class="highlight" id="pessoas">1</span>
+                pessoa(s)
+            </strong>
+        </p>
+
+        <p>
+            <strong>NB:</strong>
+            Confirme sua presença.
+        </p>
+
+        <button class="details" onclick="toggleDetalhes()">
+            Ver Detalhes
+        </button>
+
+        <div id="detalhes" class="event-info hidden">
+
+            <ul>
+                <li>
+                    <strong>Civil:</strong>
+                    09:00 - Registo Civil de Nampula
+                </li>
+
+                <li>
+                    <strong>Religioso:</strong>
+                    10:30 - Igreja Adventista
+                    (em frente ao Shoprite)
+                </li>
+
+                <li>
+                    <strong>Recepção:</strong>
+                    Salão Klimanjaro
+                </li>
+            </ul>
+
+        </div>
+
+        <p style="margin-top:25px;">
+            <em>
+                "Entrega o teu caminho ao Senhor;
+                confia nele e ele tudo fará."
+                <br>
+                Salmos 37:5
+            </em>
+        </p>
+
+        <button
+            id="confirmar"
+            class="button whatsapp"
+            onclick="confirmarPresenca()"
+        >
+            Confirmar Presença
+        </button>
+
+    </div>
+
 </div>
 
-<!-- CONTEUDO -->
-<div id="conteudo" class="hidden">
-
-<p><strong>
-Convite válido para <span class="highlight" id="pessoas">1</span> pessoa(s)
-</strong></p>
-
-<p><strong>NB:</strong> Confirme sua presença.</p>
-
-<button class="details" onclick="toggleDetalhes()">Ver Detalhes</button>
-
-<div id="detalhes" class="event-info hidden">
-<ul>
-<li>Civil: 09:00 - Registo Civil de Nampula</li>
-<li>Religioso: 10:30 - Igreja Adventista (em frente ao Shoprite)</li>
-<li>Recepção: Salão Klimanjaro</li>
-</ul>
-</div>
-
-<p><em>
-"Entrega o teu caminho ao Senhor; confia nele e ele tudo fará."
-<br>Salmos 37:5
-</em></p>
-
-<a id="whatsapp" class="button whatsapp" target="_blank">
-Confirmar Presença
-</a>
-
-</div>
-
-</div>
+<!-- Biblioteca PDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
 <script>
-// Lista de convidados
+
+// LISTA DE CONVIDADOS
 const convidados = {
-    "258863373299": { nome: "FAMILIA NAMORROTHO", pessoas: 2 },
-    "258844949470": { nome: "FAMILIA NTUNDUHATA", pessoas: 2 },
-    "258876988248": { nome: "SILONA PEDRO AUNDO", Pessoas: 1 },
-    "258877791646": { nome: "EDIBO ALBANO & LIZETE", Pessoas: 2 },
-    "258865739845": { nome: "EUCLEDINA", Pessoas: 1 },
-    "258844846204": { nome: "ADIEL & PARCEIRA", Pessoas: 2 },
-    "258873305500": { nome: "COSTA ARMANDO", Pessoas: 1 },
-    "258846190539": { nome: "ARGENTINA", Pessoas: 1 },
-    "258848863734": { nome: "FAMILIA OLIVEIRA", Pessoas: 2 },
-    "258852531854": { nome: "MERLISS", Pessoas: 1 },
-    "258840118328": { nome: "LURDES MARIO", Pessoas: 1 },
-    "258850146427": { nome: "MATEUS CRISPEN & DOMINGAS", Pessoas: 2 },
-    "258874082713": { nome: "NURCIA ASSUATE", Pessoas: 1 },
-    "258847364776": { nome: "ANAFIZA MUSSAGY", Pessoas: 1 },
-    "258869226376": { nome: "MANO ABDUL", Pessoas: 1 },
-    "258842694134": { nome: "FAMILIA OSCAR TITOS", Pessoas: 2 },
-    "258876945439": { nome: "FAMILIA NELSON", Pessoas: 2 },
-    "258845431788": { nome: "FAMILIA NTOLO", Pessoas: 2 },
-    "258862898509": { nome: "FAMILIA GIL", Pessoas: 2 },
-    "258863925118": { nome: "FAMILIA IVONE MANUEL", Pessoas: 2 },
-    "258847554622": { nome: "FAMILIA ELTON", Pessoas: 1 },
-    "258878722564": { nome: "FAMILIA JUNIA", Pessoas: 2 },
-    "258844239628": { nome: "FAMILIA DINHA", Pessoas: 2 },
-    "258848453767": { nome: "FAMILIA TINITA", Pessoas: 2 },
-    "258828019924": { nome: "FAMILIA FILOMENA", Pessoas: 2 },
-    "258866202465": { nome: "FAMILIA PAULINA", Pessoas: 2 },
-    "258876914102": { nome: "FAMILIA MANTEIGA", Pessoas: 2 },
-    "258842692403": { nome: "FAMILIA LIZETE", Pessoas: 1 },
-    "258846382753": { nome: "FAMILIA PALMIRA", Pessoas: 2 },
-    "258874923959": { nome: "DULCILIA", Pessoas: 1 },
-    "258844926090": { nome: "FAMILIA CAMASSO", Pessoas: 2 },
-    "258847363708": { nome: "FAMILIA CELINA", Pessoas: 2 },
-    "258876466617": { nome: "FAMILIA ARMANDO", Pessoas: 2 },
-    "258827332201": { nome: "FAMILIA NKUMIN", Pessoas: 2 },
-    "258850500988": { nome: "FAMILIA FAHIN", Pessoas: 2 },
-    "258840331865": { nome: "FAMILIA MIGUEL", Pessoas: 2 },
-    "258840458984": { nome: "FAMILIA IVANDRO CORNELIO", Pessoas: 1 },
-    "258842895412": { nome: "FAMILIA AMBROSIO & MUNIZA", Pessoas: 2 },
-    "258849013034": { nome: "FAMILIA JAIME & NEIDE", Pessoas: 2 },
-    "258843682977": { nome: "FAMILIA ANGELICA JESSICA", Pessoas: 1 },
-    "258865059271": { nome: "FAMILIA ANICETO HUO", Pessoas: 1 },
-    "258879523873": { nome: "FAMILIA NUNES", Pessoas: 2 },
-    "258865238161": { nome: "FAMILIA OSCAR LOTE", Pessoas: 2 },
-    "258873094279": { nome: "FAMILIA CAMINETE", Pessoas: 2 },
-    "258875731485": { nome: "FAMILIA BANDE", Pessoas: 2 },
-    "258852703365": { nome: "FAMILIA CHELSEA MULIECA & ADRIANO", Pessoas: 2 },
-    "258867522614": { nome: "FAMILIA SAIMON", Pessoas: 1 },
-    "258873951527": { nome: "FAMILIA BUENE", Pessoas: 2 },
-    "258843338243": { nome: "FAMILIA ALFREDO", Pessoas: 2 },
-    "258843713448": { nome: "FAMILIA MAQUINA", Pessoas: 2 },
-    "258843579419": { nome: "FAMILIA ALBANO", Pessoas: 2 },
-    "258842119111": { nome: "AVERTINO ALBANO", Pessoas: 1 },
-    "258862001552": { nome: "PRISCINA ALBANO", Pessoas: 1 },
-    "258848577023": { nome: "FAMILIA OSME", Pessoas: 2 },
-    "258872000506": { nome: "FAMILIA SILVERIO", Pessoas: 2 },
-    "258870261624": { nome: "FAMILIA INOCENCIO", Pessoas: 1 },
-    "258846578895": { nome: "FAMILIA CHORAO", Pessoas: 1 },
-    "258848458928": { nome: "FAMILIA PEDRO AUNDO", Pessoas: 1 },
-    "258863678445": { nome: "FAMILIA BENEDITA AUNDO", Pessoas: 1 },
-    "258843563230": { nome: "FAMILIA SIMONE", Pessoas: 1 },
-    "258871663972": { nome: "FAMILIA GECASE", Pessoas: 1 },
-    "258842838407": { nome: "FAMILIA MAURO", Pessoas: 2 },
-    "258844080633": { nome: "FAMILIA LUCIANO", Pessoas: 2 },
-    "258876700936": { nome: "FAMILIA LINDER", Pessoas: 1 },
-    "258847447737": { nome: "FAMILIA ROSSE", Pessoas: 1 },
-    "258847062858": { nome: "FAMILIA LEONARDO", Pessoas: 1 },
-    "258848975704": { nome: "FAMILIA ANGELINA", Pessoas: 1 },
-    "258840299566": { nome: "FAMILIA MANSUR", Pessoas: 1 },
-    "258861611561": { nome: "FAMILIA SANTOS", Pessoas: 1 },
-    "258847182270": { nome: "FAMILIA ALFINETE", Pessoas: 2 },
-    "258878832417": { nome: "FAMILIA SADATI", Pessoas: 2 },
-    "258876117270": { nome: "FAMILIA CELSO", Pessoas: 2 },
-    "258872577223": { nome: "FAMILIA REIS", Pessoas: 2 },
-    "258846738364": { nome: "FAMILIA RACHIDE", Pessoas: 2 },
-    "258845330968": { nome: "FAMILIA NEUSA & KELVIN", Pessoas: 2 },
-    "258879677053": { nome: "FLAVIA", Pessoas: 1 },
-    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
-    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
-    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
-    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
-    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
-    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
-    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
-    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
-    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
-    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
-    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
-    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
-    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
-    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
-    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
-    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
-    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
-    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
-    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
-    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
-    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
-    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
-    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
-    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
-    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
-    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
-    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
-    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
-    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
-    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
-    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
-    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
-    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
-    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
-    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
-    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
-    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
-    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
-    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
-    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
-    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
-    "258871408400": { nome: "FAMILIA NTUNDUHATA", Pessoas: 1 },
-    "258872655424": { nome: "LUCIA PAULO", pessoas: 1 }
+
+    "258863373299":{
+        nome:"FAMILIA NAMORROTHO",
+        pessoas:2
+    },
+
+    "258844949470":{
+        nome:"FAMILIA NTUNDUHATA",
+        pessoas:2
+    },
+
+    "258876988248":{
+        nome:"SILONA PEDRO AUNDO",
+        pessoas:1
+    },
+
+    "258877791646":{
+        nome:"EDIBO ALBANO & LIZETE",
+        pessoas:2
+    },
+
+    "258865739845":{
+        nome:"EUCLEDINA",
+        pessoas:1
+    },
+
+    "258844846204":{
+        nome:"ADIEL & PARCEIRA",
+        pessoas:2
+    },
+
+    "258873305500":{
+        nome:"COSTA ARMANDO",
+        pessoas:1
+    },
+
+    "258846190539":{
+        nome:"ARGENTINA",
+        pessoas:1
+    },
+
+    "258848863734":{
+        nome:"FAMILIA OLIVEIRA",
+        pessoas:2
+    },
+
+    "258852531854":{
+        nome:"MERLISS",
+        pessoas:1
+    },
+
+    "258840118328":{
+        nome:"LURDES MARIO",
+        pessoas:1
+    },
+
+    "258850146427":{
+        nome:"MATEUS CRISPEN & DOMINGAS",
+        pessoas:2
+    },
+
+    "258874082713":{
+        nome:"NURCIA ASSUATE",
+        pessoas:1
+    },
+
+    "258847364776":{
+        nome:"ANAFIZA MUSSAGY",
+        pessoas:1
+    },
+
+    "258869226376":{
+        nome:"MANO ABDUL",
+        pessoas:1
+    },
+
+    "258842694134":{
+        nome:"FAMILIA OSCAR TITOS",
+        pessoas:2
+    },
+
+    "258876945439":{
+        nome:"FAMILIA NELSON",
+        pessoas:2
+    },
+
+    "258845431788":{
+        nome:"FAMILIA NTOLO",
+        pessoas:2
+    },
+
+    "258862898509":{
+        nome:"FAMILIA GIL",
+        pessoas:2
+    },
+
+    "258863925118":{
+        nome:"FAMILIA IVONE MANUEL",
+        pessoas:2
+    },
+
+    "258847554622":{
+        nome:"FAMILIA ELTON",
+        pessoas:1
+    },
+
+    "258878722564":{
+        nome:"FAMILIA JUNIA",
+        pessoas:2
+    },
+
+    "258844239628":{
+        nome:"FAMILIA DINHA",
+        pessoas:2
+    },
+
+    "258848453767":{
+        nome:"FAMILIA TINITA",
+        pessoas:2
+    },
+
+    "258828019924":{
+        nome:"FAMILIA FILOMENA",
+        pessoas:2
+    },
+
+    "258866202465":{
+        nome:"FAMILIA PAULINA",
+        pessoas:2
+    },
+
+    "258876914102":{
+        nome:"FAMILIA MANTEIGA",
+        pessoas:2
+    },
+
+    "258842692403":{
+        nome:"FAMILIA LIZETE",
+        pessoas:1
+    },
+
+    "258846382753":{
+        nome:"FAMILIA PALMIRA",
+        pessoas:2
+    },
+
+    "258874923959":{
+        nome:"DULCILIA",
+        pessoas:1
+    },
+
+    "258844926090":{
+        nome:"FAMILIA CAMASSO",
+        pessoas:2
+    },
+
+    "258847363708":{
+        nome:"FAMILIA CELINA",
+        pessoas:2
+    },
+
+    "258876466617":{
+        nome:"FAMILIA ARMANDO",
+        pessoas:2
+    },
+
+    "258827332201":{
+        nome:"FAMILIA NKUMIN",
+        pessoas:2
+    },
+
+    "258850500988":{
+        nome:"FAMILIA FAHIN",
+        pessoas:2
+    },
+
+    "258840331865":{
+        nome:"FAMILIA MIGUEL",
+        pessoas:2
+    },
+
+    "258840458984":{
+        nome:"FAMILIA IVANDRO CORNELIO",
+        pessoas:1
+    },
+
+    "258842895412":{
+        nome:"FAMILIA AMBROSIO & MUNIZA",
+        pessoas:2
+    },
+
+    "258849013034":{
+        nome:"FAMILIA JAIME & NEIDE",
+        pessoas:2
+    },
+
+    "258843682977":{
+        nome:"FAMILIA ANGELICA JESSICA",
+        pessoas:1
+    },
+
+    "258865059271":{
+        nome:"FAMILIA ANICETO HUO",
+        pessoas:1
+    },
+
+    "258879523873":{
+        nome:"FAMILIA NUNES",
+        pessoas:2
+    },
+
+    "258865238161":{
+        nome:"FAMILIA OSCAR LOTE",
+        pessoas:2
+    },
+
+    "258873094279":{
+        nome:"FAMILIA CAMINETE",
+        pessoas:2
+    },
+
+    "258875731485":{
+        nome:"FAMILIA BANDE",
+        pessoas:2
+    },
+
+    "258852703365":{
+        nome:"FAMILIA CHELSEA MULIECA & ADRIANO",
+        pessoas:2
+    },
+
+    "258867522614":{
+        nome:"FAMILIA SAIMON",
+        pessoas:1
+    },
+
+    "258873951527":{
+        nome:"FAMILIA BUENE",
+        pessoas:2
+    },
+
+    "258843338243":{
+        nome:"FAMILIA ALFREDO",
+        pessoas:2
+    },
+
+    "258843713448":{
+        nome:"FAMILIA MAQUINA",
+        pessoas:2
+    },
+
+    "258843579419":{
+        nome:"FAMILIA ALBANO",
+        pessoas:2
+    },
+
+    "258842119111":{
+        nome:"AVERTINO ALBANO",
+        pessoas:1
+    },
+
+    "258862001552":{
+        nome:"PRISCINA ALBANO",
+        pessoas:1
+    },
+
+    "258848577023":{
+        nome:"FAMILIA OSME",
+        pessoas:2
+    },
+
+    "258872000506":{
+        nome:"FAMILIA SILVERIO",
+        pessoas:2
+    },
+
+    "258870261624":{
+        nome:"FAMILIA INOCENCIO",
+        pessoas:1
+    },
+
+    "258846578895":{
+        nome:"FAMILIA CHORAO",
+        pessoas:1
+    },
+
+    "258848458928":{
+        nome:"FAMILIA PEDRO AUNDO",
+        pessoas:1
+    },
+
+    "258863678445":{
+        nome:"FAMILIA BENEDITA AUNDO",
+        pessoas:1
+    },
+
+    "258843563230":{
+        nome:"FAMILIA SIMONE",
+        pessoas:1
+    },
+
+    "258871663972":{
+        nome:"FAMILIA GECASE",
+        pessoas:1
+    },
+
+    "258842838407":{
+        nome:"FAMILIA MAURO",
+        pessoas:2
+    },
+
+    "258844080633":{
+        nome:"FAMILIA LUCIANO",
+        pessoas:2
+    },
+
+    "258876700936":{
+        nome:"FAMILIA LINDER",
+        pessoas:1
+    },
+
+    "258847447737":{
+        nome:"FAMILIA ROSSE",
+        pessoas:1
+    },
+
+    "258847062858":{
+        nome:"FAMILIA LEONARDO",
+        pessoas:1
+    },
+
+    "258848975704":{
+        nome:"FAMILIA ANGELINA",
+        pessoas:1
+    },
+
+    "258840299566":{
+        nome:"FAMILIA MANSUR",
+        pessoas:1
+    },
+
+    "258861611561":{
+        nome:"FAMILIA SANTOS",
+        pessoas:1
+    },
+
+    "258847182270":{
+        nome:"FAMILIA ALFINETE",
+        pessoas:2
+    },
+
+    "258878832417":{
+        nome:"FAMILIA SADATI",
+        pessoas:2
+    },
+
+    "258876117270":{
+        nome:"FAMILIA CELSO",
+        pessoas:2
+    },
+
+    "258872577223":{
+        nome:"FAMILIA REIS",
+        pessoas:2
+    },
+
+    "258846738364":{
+        nome:"FAMILIA RACHIDE",
+        pessoas:2
+    },
+
+    "258845330968":{
+        nome:"FAMILIA NEUSA & KELVIN",
+        pessoas:2
+    },
+
+    "258879677053":{
+        nome:"FLAVIA",
+        pessoas:1
+    },
+
+    "258846138954":{
+        nome:"FAMILIA CAMINETE",
+        pessoas:2
+    },
+
+    "258847208159":{
+        nome:"FAMILIA MATIQUE",
+        pessoas:2
+    }
+
+    "258876466617":{
+        nome:"FAMILIA ARMANDO",
+        pessoas:2
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
+
+    "258872655424":{
+        nome:"LUCIA PAULO",
+        pessoas:1
+    }
 };
 
-function verificar() {
-    const tel = document.getElementById("telefone").value.trim();
+// VERIFICAR CONVIDADO
+function verificar(){
 
-    // validação Moçambique
-    if (!tel.startsWith("258") || tel.length !== 12) {
-        alert("Número inválido. Use formato: 2588XXXXXXXX");
+    const tel = document
+        .getElementById("telefone")
+        .value
+        .trim();
+
+    // validação
+    if(
+        !tel.startsWith("258") ||
+        tel.length !== 12
+    ){
+        alert(
+            "Número inválido. Use formato: 2588XXXXXXXX"
+        );
         return;
     }
 
     let nome = "Convidado";
     let pessoas = 1;
 
-    if (convidados[tel]) {
+    // verifica convidado
+    if(convidados[tel]){
         nome = convidados[tel].nome;
         pessoas = convidados[tel].pessoas;
     }
 
+    // mostra dados
     document.getElementById("nome").innerText = nome;
+
     document.getElementById("pessoas").innerText = pessoas;
 
-    // WhatsApp link
-    const msg = `Olá, confirmo minha presença no casamento de Archel e Assanate`;
-    document.getElementById("whatsapp").href =
-        `https://wa.me/258871408400?text=${encodeURIComponent(msg)}`;
+    // mostra conteúdo
+    document
+        .getElementById("login")
+        .classList.add("hidden");
 
-    document.getElementById("login").classList.add("hidden");
-    document.getElementById("conteudo").classList.remove("hidden");
+    document
+        .getElementById("conteudo")
+        .classList.remove("hidden");
 }
 
-// Enter
-document.getElementById("telefone").addEventListener("keypress", function(e){
-    if(e.key === "Enter") verificar();
+// ENTER
+document
+.getElementById("telefone")
+.addEventListener("keypress",function(e){
+
+    if(e.key === "Enter"){
+        verificar();
+    }
+
 });
 
+// MOSTRAR DETALHES
 function toggleDetalhes(){
-    document.getElementById("detalhes").classList.toggle("hidden");
+
+    document
+        .getElementById("detalhes")
+        .classList.toggle("hidden");
 }
+
+// CONFIRMAR PRESENÇA
+function confirmarPresenca(){
+
+    const nome =
+        document.getElementById("nome").innerText;
+
+    const mensagem =
+`Olá, confirmo minha presença no casamento de Archel e Assanate.\n\nConvidado: ${nome}`;
+
+    // abre whatsapp
+    window.open(
+        `https://wa.me/258871408400?text=${encodeURIComponent(mensagem)}`,
+        "_blank"
+    );
+
+    // baixa PDF
+    baixarPDF();
+}
+
+// GERAR PDF
+function baixarPDF(){
+
+    const elemento =
+        document.getElementById("convite");
+
+    const nomeConvidado =
+        document.getElementById("nome").innerText;
+
+    const opcoes = {
+
+        margin:0.3,
+
+        filename:
+            `Convite_${nomeConvidado}.pdf`,
+
+        image:{
+            type:'jpeg',
+            quality:1
+        },
+
+        html2canvas:{
+            scale:3,
+            useCORS:true
+        },
+
+        jsPDF:{
+            unit:'in',
+            format:'a4',
+            orientation:'portrait'
+        }
+    };
+
+    html2pdf()
+        .set(opcoes)
+        .from(elemento)
+        .save();
+}
+
 </script>
 
 </body>
