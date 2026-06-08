@@ -7,7 +7,6 @@
 <title>Convite de Casamento</title>
 
 <style>
-
 body{
     margin:0;
     padding:20px;
@@ -30,9 +29,7 @@ body{
     text-align:center;
 }
 
-h1{
-    color:#8B7500;
-}
+h1{ color:#8B7500; }
 
 .highlight{
     color:#b8962e;
@@ -58,24 +55,11 @@ button{
     font-weight:bold;
 }
 
-.submit{
-    background:#4CAF50;
-    color:white;
-}
+.submit{ background:#4CAF50; color:white; }
+.whatsapp{ background:#25D366; color:white; }
+.details{ background:#d4af37; color:white; }
 
-.whatsapp{
-    background:#25D366;
-    color:white;
-}
-
-.details{
-    background:#d4af37;
-    color:white;
-}
-
-.hidden{
-    display:none;
-}
+.hidden{ display:none; }
 
 .event-info{
     margin-top:20px;
@@ -84,7 +68,6 @@ button{
     padding:15px;
     border-radius:10px;
 }
-
 </style>
 </head>
 
@@ -96,239 +79,157 @@ button{
 
     <p><strong>Os Senhores</strong></p>
 
-    <p>
-        Albano Agostinho e Maria Imaculada Pedro Aundo
-    </p>
+    <p>Albano Agostinho e Maria Imaculada Pedro Aundo</p>
 
     <p>Juntamente com</p>
 
-    <p>
-        Lerito Álvaro / Maria Ivone Manuel e Nilza Torres
-    </p>
+    <p>Lerito Álvaro / Maria Ivone Manuel e Nilza Torres</p>
 
-    <p>
-        <strong>
-            Têm a honra de convidar
-            <span class="highlight" id="nome">
-                __________
-            </span>
-            para a celebração do casamento de seus filhos
-        </strong>
-    </p>
+    <p><strong>
+        Têm a honra de convidar
+        <span class="highlight" id="nome">__________</span>
+        para a celebração do casamento de seus filhos
+    </strong></p>
 
     <h2 style="color:#b8962e;">
         Archel Albano & Assanate Lerito Álvaro
     </h2>
 
-    <p>
-        A realizar-se no dia
-        <strong>25 de Junho de 2026</strong>
-    </p>
+    <p>A realizar-se no dia <strong>25 de Junho de 2026</strong></p>
 
     <!-- LOGIN -->
     <div id="login">
-
         <p>Digite o seu número:</p>
 
-        <input
-            type="text"
-            id="telefone"
-            placeholder="258847099003"
-        >
+        <input type="text" id="telefone" placeholder="258847099003">
 
-        <br>
-
-        <button
-            class="submit"
-            id="btnAcessar"
-        >
+        <button class="submit" id="btnAcessar">
             Acessar Convite
         </button>
-
     </div>
 
     <!-- CONTEÚDO -->
     <div id="conteudo" class="hidden">
 
-        <p>
-            <strong>
-                Convite válido para
-                <span id="Pessoas">1</span>
-                Pessoa(s)
-            </strong>
-        </p>
+        <p><strong>
+            Convite válido para
+            <span id="pessoas">1</span>
+            pessoa(s)
+        </strong></p>
 
-        <button
-            class="details"
-            id="btnDetalhes"
-        >
+        <button class="details" id="btnDetalhes">
             Ver Detalhes
         </button>
 
         <div id="detalhes" class="event-info hidden">
-
             <ul>
-                <li>
-                    Civil: 09:00 - Registo Civil de Nampula
-                </li>
-
-                <li>
-                    Religioso: 10:30 - Igreja Adventista
-                    (em frente ao Shoprite)
-                </li>
-
-                <li>
-                    Recepção: 14:00 - Salão Klimanjaro
-                </li>
+                <li>Civil: 09:00 - Registo Civil de Nampula</li>
+                <li>Religioso: 10:30 - Igreja Adventista</li>
+                <li>Recepção: 14:00 - Salão Klimanjaro</li>
             </ul>
-
         </div>
 
-        <p>
-            <em>
-                "Entrega o teu caminho ao Senhor;
-                confia nele e ele tudo fará."
-                <br>
-                Salmos 37:5
-            </em>
-        </p>
+        <p><em>
+            "Entrega o teu caminho ao Senhor;
+            confia nele e ele tudo fará."
+            <br>Salmos 37:5
+        </em></p>
 
-        <button
-            class="whatsapp"
-            id="btnConfirmar"
-        >
+        <button class="whatsapp" id="btnConfirmar">
             Confirmar Presença
         </button>
-
     </div>
-
 </div>
 
-<!-- PDF -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
 <script>
-// Lista de convidados
+
+// =======================
+// LISTA LIMPA DE CONVIDADOS
+// =======================
 const convidados = {
-    "258863373299": { nome: "FAMILIA NAMORROTHO", Pessoas: 2 },
-    "258844949470": { nome: "FAMILIA NTUNDUHATA", Pessoas: 2 },
-    "258876988248": { nome: "SILONA PEDRO AUNDO", Pessoas: 1 },
-    "258877791646": { nome: "EDIBO ALBANO & LIZETE", Pessoas: 2 },
-    "258879677053": { nome: "FLAVIA", Pessoas: 1 },
-    "258844846204": { nome: "ADIEL & PARCEIRA", Pessoas: 2 },
-    "258873305500": { nome: "COSTA ARMANDO", Pessoas: 1 },
-    "258846190539": { nome: "ARGENTINA", Pessoas: 1 },
-    "258848863734": { nome: "FAMILIA OLIVEIRA", Pessoas: 2 },
-    "258852531854": { nome: "MERLISS", Pessoas: 1 },
-    "258840118328": { nome: "LURDES MARIO", Pessoas: 1 },
-    "258850146427": { nome: "MATEUS CRISPEN & DOMINGAS", Pessoas: 2 },
-    "258874082713": { nome: "NURCIA ASSUATE", Pessoas: 1 },
-    "258847364776": { nome: "ANAFIZA MUSSAGY", Pessoas: 1 },
-    "258869226376": { nome: "MANO ABDUL", Pessoas: 1 },
-    "258842694134": { nome: "FAMILIA OSCAR TITOS", Pessoas: 2 },
-    "258876945439": { nome: "FAMILIA NELSON", Pessoas: 2 },
-    "258845431788": { nome: "FAMILIA NTOLE", Pessoas: 2 },
-    "258862898509": { nome: "FAMILIA GIL", Pessoas: 2 },
-    "258863925118": { nome: "FAMILIA IVONE MANUEL", Pessoas: 2 },
-    "258847554622": { nome: "FAMILIA ELTON", Pessoas: 1 },
-    "258867978211": { nome: "FAMILIA AVIAO", Pessoas: 2 },
-    "258844239628": { nome: "FAMILIA DINHA", Pessoas: 2 },
-    "258848453767": { nome: "FAMILIA TINITA", Pessoas: 2 },
-    "258828019924": { nome: "FAMILIA FILOMENA", Pessoas: 2 },
-    "258866202465": { nome: "FAMILIA PAULINA", Pessoas: 2 },
-    "258876914102": { nome: "FAMILIA MANTEIGA", Pessoas: 2 },
-    "258842692403": { nome: "FAMILIA LIZETE", Pessoas: 1 },
-    "258846382753": { nome: "FAMILIA PALMIRA", Pessoas: 2 },
-    "258874923959": { nome: "DULCILIA", Pessoas: 1 },
-    "258844926090": { nome: "FAMILIA CAMASSO", Pessoas: 2 },
-    "258847363708": { nome: "FAMILIA CELINA", Pessoas: 2 },
-    "258876466617": { nome: "FAMILIA ARMANDO", Pessoas: 2 },
-    "258827332201": { nome: "FAMILIA NKUMIN", Pessoas: 2 },
-    "258850500988": { nome: "FAMILIA FAHIN", Pessoas: 2 },
-    "258840331865": { nome: "FAMILIA MIGUEL", Pessoas: 2 },
-    "258840458984": { nome: "FAMILIA IVANDRO CORNELIO", Pessoas: 1 },
-    "258842895412": { nome: "FAMILIA AMBROSIO & MUNIZA", Pessoas: 2 },
-    "258849013034": { nome: "FAMILIA JAIME & NEIDE", Pessoas: 2 },
-    "258843682977": { nome: "FAMILIA ANGELICA JESSICA", Pessoas: 1 },
-    "258865059271": { nome: "FAMILIA ANICETO HUO", Pessoas: 1 },
-    "258879523873": { nome: "FAMILIA NUNES", Pessoas: 2 },
-    "258865238161": { nome: "FAMILIA OSCAR LOTE", Pessoas: 2 },
-    "258873094279": { nome: "FAMILIA CAMINETE", Pessoas: 2 },
-    "258875731485": { nome: "FAMILIA BANDE", Pessoas: 2 },
-    "258852703365": { nome: "FAMILIA CHELSEA MULIECA & ADRIANO", Pessoas: 2 },
-    "258844704563": { nome: "FAMILIA VAGNER ANA", Pessoas: 2 },
-    "258873951527": { nome: "FAMILIA BUENE", Pessoas: 2 },
-    "258843338243": { nome: "FAMILIA ALFREDO", Pessoas: 2 },
-    "258843713448": { nome: "FAMILIA MAQUINA", Pessoas: 2 },
-    "258843579419": { nome: "FAMILIA ALBANO", Pessoas: 2 },
-    "258842119111": { nome: "AVERTINO ALBANO", Pessoas: 1 },
-    "258862001552": { nome: "PRISCINA ALBANO", Pessoas: 1 },
-    "258848577023": { nome: "FAMILIA OSME", Pessoas: 2 },
-    "258872000506": { nome: "FAMILIA SILVERIO", Pessoas: 2 },
-    "258870261624": { nome: "FAMILIA INOCENCIO", Pessoas: 1 },
-    "258846578895": { nome: "FAMILIA CHORAO", Pessoas: 1 },
-    "258848458928": { nome: "FAMILIA PEDRO AUNDO", Pessoas: 1 },
-    "258863678445": { nome: "FAMILIA BENEDITA AUNDO", Pessoas: 1 },
-    "258843563230": { nome: "FAMILIA SIMONE", Pessoas: 1 },
-    "258871663972": { nome: "FAMILIA GECASE", Pessoas: 1 },
-    "258842838407": { nome: "FAMILIA MAURO", Pessoas: 2 },
-    "258844080633": { nome: "FAMILIA LUCIANO", Pessoas: 2 },
-    "258876700936": { nome: "FAMILIA LINDER", Pessoas: 1 },
-    "258847447737": { nome: "FAMILIA ROSSE", Pessoas: 1 },
-    "258847062858": { nome: "FAMILIA LEONARDO", Pessoas: 1 },
-    "258848975704": { nome: "FAMILIA ANGELINA", Pessoas: 1 },
-    "258840299566": { nome: "FAMILIA MANSUR", Pessoas: 1 },
-    "258861611561": { nome: "FAMILIA SANTOS", Pessoas: 1 },
-    "258847182270": { nome: "FAMILIA ALFINETE", Pessoas: 2 },
-    "258878832417": { nome: "FAMILIA SADATI", Pessoas: 2 },
-    "258876117270": { nome: "FAMILIA CELSO", Pessoas: 2 },
-    "258872577223": { nome: "FAMILIA REIS", Pessoas: 2 },
-    "258846738364": { nome: "FAMILIA RACHIDE", Pessoas: 2 },
-    "258845330968": { nome: "FAMILIA NEUSA & KELVIN", Pessoas: 2 },
-    "258879958349": { nome: "FAMILIA LERITO ALVARO", Pessoas: 2 },
-    "258847208159": { nome: "FAMILIA MATIQUE", Pessoas: 2 },
-    "258861615525": { nome: "FAMILIA IBRAIMO", Pessoas: 2 },
-    "258842156014": { nome: "FAMILIA MOMADE ALVARO", Pessoas: 2 },
-    "258875383104": { nome: "FAMILIA ALBERTINO ALVARO", Pessoas: 2 },
-    "258849013034": { nome: "FAMILIA MUCONHA", Pessoas: 2 },
-    "258843682977": { nome: "JESSICA BEULA", Pessoas: 1 },
-    "258865059271": { nome: "FAMILIA HUO", Pessoas: 1 },
-    "258843713448": { nome: "FAMILIA MAQUINA", Pessoas: 2 },
-    "258877791646": { nome: "FAMILIA EDIBO ALBANO", Pessoas: 2 },
-    "258875566775": { nome: "FAMILIA MARIA DE FATIMA ALVARO", Pessoas: 1 },
-    "258842921329": { nome: "FAMILIA ZANARIA MASSORESL", Pessoas: 2 },
-    "258844146778": { nome: "FAMILIA CENITO", Pessoas: 2 },
-    "258868764034": { nome: "FAMILIA ATIA ALVARO", Pessoas: 1 },
-    "258845495592": { nome: "FAMILIA MACHAVA", Pessoas: 1 },
-    "258870848386": { nome: "FAMILIA AMINA", Pessoas: 1 },
-    "258848399900": { nome: "FAMILIA ARMANDINHO", Pessoas: 2 },
-    "258878832417": { nome: "FAMILIA SADATI", Pessoas: 2 },
-    "258847103360": { nome: "FAMILIA DALIA PERREIRA", Pessoas: 3 },
-    "258877140678": { nome: "FAMILIA QUETA", Pessoas: 1 },
-    "258850190051": { nome: "DINHO ASSILA", Pessoas: 1 },
-    "258864538349": { nome: "FAMILIA MAEZINHA", Pessoas: 2 },
-    "258842752311": { nome: "FAMILIA ATIJA", Pessoas: 2 },
-    "258867978211": { nome: "FAMILIA AVIAO", Pessoas: 2 },
-    "258876466617": { nome: "FAMILIA ARMANDO", Pessoas: 2 },
-    "258861615525": { nome: "FAMILIA IBRAIMO", Pessoas: 2 },
+    "258863373299": { nome: "FAMILIA NAMORROTHO", pessoas: 2 },
+    "258844949470": { nome: "FAMILIA NTUNDUHATA", pessoas: 2 },
+    "258876988248": { nome: "SILONA PEDRO AUNDO", pessoas: 1 },
+    "258877791646": { nome: "FAMILIA EDIBO ALBANO", pessoas: 2 },
+    "258879677053": { nome: "FLAVIA", pessoas: 1 },
+    "258844846204": { nome: "ADIEL & PARCEIRA", pessoas: 2 },
+    "258873305500": { nome: "COSTA ARMANDO", pessoas: 1 },
+    "258846190539": { nome: "ARGENTINA", pessoas: 1 },
+    "258848863734": { nome: "FAMILIA OLIVEIRA", pessoas: 2 },
+    "258852531854": { nome: "MERLISS", pessoas: 1 },
+    "258840118328": { nome: "LURDES MARIO", pessoas: 1 },
+    "258850146427": { nome: "MATEUS CRISPEN & DOMINGAS", pessoas: 2 },
+    "258874082713": { nome: "NURCIA ASSUATE", pessoas: 1 },
+    "258847364776": { nome: "ANAFIZA MUSSAGY", pessoas: 1 },
+    "258869226376": { nome: "MANO ABDUL", pessoas: 1 },
+    "258842694134": { nome: "FAMILIA OSCAR TITOS", pessoas: 2 },
+    "258876945439": { nome: "FAMILIA NELSON", pessoas: 2 },
+    "258845431788": { nome: "FAMILIA NTOLE", pessoas: 2 },
+    "258862898509": { nome: "FAMILIA GIL", pessoas: 2 },
+    "258863925118": { nome: "FAMILIA IVONE MANUEL", pessoas: 2 },
+    "258847554622": { nome: "FAMILIA ELTON", pessoas: 1 },
+    "258867978211": { nome: "FAMILIA AVIAO", pessoas: 2 },
+    "258844239628": { nome: "FAMILIA DINHA", pessoas: 2 },
+    "258848453767": { nome: "FAMILIA TINITA", pessoas: 2 },
+    "258828019924": { nome: "FAMILIA FILOMENA", pessoas: 2 },
+    "258866202465": { nome: "FAMILIA PAULINA", pessoas: 2 },
+    "258876914102": { nome: "FAMILIA MANTEIGA", pessoas: 2 },
+    "258842692403": { nome: "FAMILIA LIZETE", pessoas: 1 },
+    "258846382753": { nome: "FAMILIA PALMIRA", pessoas: 2 },
+    "258874923959": { nome: "DULCILIA", pessoas: 1 },
+    "258844926090": { nome: "FAMILIA CAMASSO", pessoas: 2 },
+    "258847363708": { nome: "FAMILIA CELINA", pessoas: 2 },
+    "258876466617": { nome: "FAMILIA ARMANDO", pessoas: 2 },
+    "258827332201": { nome: "FAMILIA NKUMIN", pessoas: 2 },
+    "258850500988": { nome: "FAMILIA FAHIN", pessoas: 2 },
+    "258840331865": { nome: "FAMILIA MIGUEL", pessoas: 2 },
+    "258840458984": { nome: "FAMILIA IVANDRO CORNELIO", pessoas: 1 },
+    "258842895412": { nome: "FAMILIA AMBROSIO & MUNIZA", pessoas: 2 },
+    "258847208159": { nome: "FAMILIA MATIQUE", pessoas: 2 },
+    "258861615525": { nome: "FAMILIA IBRAIMO", pessoas: 2 },
+    "258842156014": { nome: "FAMILIA MOMADE ALVARO", pessoas: 2 },
+    "258875383104": { nome: "FAMILIA ALBERTINO ALVARO", pessoas: 2 },
+    "258843713448": { nome: "FAMILIA MAQUINA", pessoas: 2 },
+    "258842119111": { nome: "AVERTINO ALBANO", pessoas: 1 },
+    "258862001552": { nome: "PRISCINA ALBANO", pessoas: 1 },
+    "258872000506": { nome: "FAMILIA SILVERIO", pessoas: 2 },
+    "258870261624": { nome: "FAMILIA INOCENCIO", pessoas: 1 },
+    "258846578895": { nome: "FAMILIA CHORAO", pessoas: 1 },
+    "258848458928": { nome: "FAMILIA PEDRO AUNDO", pessoas: 1 },
+    "258863678445": { nome: "FAMILIA BENEDITA AUNDO", pessoas: 1 },
+    "258843563230": { nome: "FAMILIA SIMONE", pessoas: 1 },
+    "258871663972": { nome: "FAMILIA GECASE", pessoas: 1 },
+    "258842838407": { nome: "FAMILIA MAURO", pessoas: 2 },
+    "258844080633": { nome: "FAMILIA LUCIANO", pessoas: 2 },
+    "258876700936": { nome: "FAMILIA LINDER", pessoas: 1 },
+    "258847447737": { nome: "FAMILIA ROSSE", pessoas: 1 },
+    "258847062858": { nome: "FAMILIA LEONARDO", pessoas: 1 },
+    "258848975704": { nome: "FAMILIA ANGELINA", pessoas: 1 },
+    "258840299566": { nome: "FAMILIA MANSUR", pessoas: 1 },
+    "258861611561": { nome: "FAMILIA SANTOS", pessoas: 1 },
+    "258847182270": { nome: "FAMILIA ALFINETE", pessoas: 2 },
+    "258876117270": { nome: "FAMILIA CELSO", pessoas: 2 },
+    "258872577223": { nome: "FAMILIA REIS", pessoas: 2 },
+    "258846738364": { nome: "FAMILIA RACHIDE", pessoas: 2 },
+    "258845330968": { nome: "FAMILIA NEUSA & KELVIN", pessoas: 2 },
+    "258879958349": { nome: "FAMILIA LERITO ALVARO", pessoas: 2 },
+    "258850190051": { nome: "DINHO ASSILA", pessoas: 1 },
+    "258864538349": { nome: "FAMILIA MAEZINHA", pessoas: 2 },
+    "258842752311": { nome: "FAMILIA ATIJA", pessoas: 2 },
     "258872655424": { nome: "LUCIA PAULO", pessoas: 2 }
 };
 
-// ACESSAR CONVITE
+// =======================
+// FUNÇÕES
+// =======================
+
 function verificar(){
+    const tel = document.getElementById("telefone").value.trim();
 
-    const tel =
-        document.getElementById("telefone")
-        .value
-        .trim();
-
-    if(
-        tel.length !== 12 ||
-        !tel.startsWith("258")
-    ){
-        alert(
-            "Número inválido.\nUse: 2588XXXXXXXX"
-        );
+    if(tel.length !== 12 || !tel.startsWith("258")){
+        alert("Número inválido.\nUse: 2588XXXXXXXX");
         return;
     }
 
@@ -340,103 +241,35 @@ function verificar(){
         pessoas = convidados[tel].pessoas;
     }
 
-    document.getElementById("nome").innerText =
-        nome;
+    document.getElementById("nome").innerText = nome;
+    document.getElementById("pessoas").innerText = pessoas;
 
-    document.getElementById("pessoas").innerText =
-        pessoas;
-
-    document.getElementById("login")
-        .classList.add("hidden");
-
-    document.getElementById("conteudo")
-        .classList.remove("hidden");
+    document.getElementById("login").classList.add("hidden");
+    document.getElementById("conteudo").classList.remove("hidden");
 }
 
-// DETALHES
 function toggleDetalhes(){
-
-    document.getElementById("detalhes")
-        .classList.toggle("hidden");
+    document.getElementById("detalhes").classList.toggle("hidden");
 }
 
-// CONFIRMAR PRESENÇA
 function confirmarPresenca(){
-
-    const nome =
-        document.getElementById("nome").innerText;
+    const nome = document.getElementById("nome").innerText;
 
     const mensagem =
 `Olá, confirmo minha presença no casamento de Archel e Assanate.
-
 Convidado: ${nome}`;
 
-    // abre WhatsApp
     window.open(
         `https://wa.me/258871408400?text=${encodeURIComponent(mensagem)}`,
         "_blank"
     );
-
-    // gerar PDF
-    gerarPDF();
 }
 
-// GERAR PDF
-function gerarPDF(){
-
-    const elemento =
-        document.getElementById("convite");
-
-    const nome =
-        document.getElementById("nome").innerText;
-
-    html2pdf().set({
-
-        margin:0.3,
-
-        filename:`Convite_${nome}.pdf`,
-
-        image:{
-            type:'jpeg',
-            quality:1
-        },
-
-        html2canvas:{
-            scale:2
-        },
-
-        jsPDF:{
-            unit:'in',
-            format:'a4',
-            orientation:'portrait'
-        }
-
-    }).from(elemento).save();
-}
-
-// EVENTOS
-document.addEventListener("DOMContentLoaded",function(){
-
-    document.getElementById("btnAcessar")
-        .addEventListener("click",verificar);
-
-    document.getElementById("btnDetalhes")
-        .addEventListener("click",toggleDetalhes);
-
-    document.getElementById("btnConfirmar")
-        .addEventListener("click",confirmarPresenca);
-
-    document.getElementById("telefone")
-        .addEventListener("keypress",function(e){
-
-            if(e.key === "Enter"){
-                verificar();
-            }
-
-        });
-
+document.addEventListener("DOMContentLoaded", function(){
+    document.getElementById("btnAcessar").addEventListener("click", verificar);
+    document.getElementById("btnDetalhes").addEventListener("click", toggleDetalhes);
+    document.getElementById("btnConfirmar").addEventListener("click", confirmarPresenca);
 });
-
 </script>
 
 </body>
